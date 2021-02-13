@@ -24,10 +24,10 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour==00)
-            {
-                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
-            }
+            //if (DateTime.Now.Hour==00)
+            //{
+            //    return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            //}
             
                 return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
             
@@ -55,6 +55,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDeatils());
         }
 
+        //[LogAspect] --> AOP yani bu kodu logla demek
         public IResult Add(Product product)
         {
 
