@@ -30,8 +30,8 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>();
-            services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IProductService, ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();
             //services.AddSingleton<IProductService, ProductManager>()
             //services.AddSingleton<biri bunu isterse(constructorda),bu instanceyi ver>()
             //bu gördüklerimiz Autofac,Ninject,CastleWindsor gibi platformlara taþýyacaðýz.
