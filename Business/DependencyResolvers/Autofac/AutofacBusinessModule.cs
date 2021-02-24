@@ -21,6 +21,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();   //birisi senden IProductService isterse ProductManager newleyip ver
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
 
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();   
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+            //bu kod ise reflectoru "[]" çalıştırmaya yarıyor
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
