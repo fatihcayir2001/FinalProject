@@ -15,11 +15,11 @@ namespace DataAccess.Concrete.EntityFramework
     //data accese sağ tıklayıp manage NuGet projectsden ulaşabiliriz 
     //Şuan EfProductDal da her şey hazır.
     //baserepository de IProductDal daki kodlar olduğundan implement etmemize gerek yok
-    public class EfProductDal : EfEntityRepositoryBase<Product, NorthwindContex>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product, NorthwindContext>, IProductDal
     {
         public List<ProductDetailDto> GetProductDeatils()
         {
-            using (NorthwindContex contex = new NorthwindContex())
+            using (NorthwindContext contex = new NorthwindContext())
             {
                 var result = from p in contex.Products
                              join c in contex.Categories
